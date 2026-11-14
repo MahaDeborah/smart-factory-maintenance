@@ -167,11 +167,14 @@ with open("pump_readings.csv", "w", newline="", encoding="utf-8") as file:
            writer.writeheader()
            writer.writerows(readings_data)
 print("Incident history readings:", len(incident_history)) 
+
 for item in incident_history:
          print(item)    
 
-if incident_history:
-    with open("incident_history.csv", "w", newline="", encoding="utf-8") as file:
-        writer = csv.DictWriter(file, fieldnames=incident_history[0].keys())
-        writer.writeheader()
-        writer.writerows(incident_history)
+with open("incident_history.csv", "w", newline="", encoding="utf-8") as file:
+    writer = csv.DictWriter(
+        file,
+        fieldnames=["Incident ID", "Sensor", "Reading", "Timestamp", "Status"]
+    )
+    writer.writeheader()
+    writer.writerows(incident_history)
