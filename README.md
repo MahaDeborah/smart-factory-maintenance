@@ -241,3 +241,7 @@ recovery progress, and history |
  
  Control in Technical Systems Student at LETI, interested in industrial software, machine learning and computer vision.
  [GitHub profile](https://github.com/MahaDeborah)
+
+ [View live demo](https://deborah-smart-factory.streamlit.app/)
+
+The demo displays saved simulated sensor readings.
