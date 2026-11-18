@@ -1,96 +1,24 @@
-# Smart Factory Maintenance 
 
- [View live demo](https://deborah-smart-factory.streamlit.app/)
+# Smart Factory Maintenance
 
-The demo displays saved simulated sensor readings.
-A python operator that simulates cooling pump operation, detects abnormal sensor readings, and tract incidents through recovery.
+[View Live Demo](https://deborah-smart-factory.streamlit.app/)
 
-I built this project to practise industrial monitoring, incident tracking and data visualisation.
-
-#Overview
-
-The application monitors a simulated cooling pump, **UTL-002** in a factory's utilities department 
--Water flow - L/min
--Motor temperature -c
--Water pressure - bar
--Vibration-mm/s
-
-The streamlit dashboard displays the latest values, sensory history charts, open incident, and incident history
-
-##Features
-
--Random selection of one to four sensors to develop faults 
--Normal, faults and recovery simulation stages 
--Threshold based warning and critical alerts 
--Independent incident tracking for each sensor 
--Incident closure after four consecutive normal reading
--Charts with labelled thresholds and distinct colours and shapes
-- Recovery progress for open incidents
-- Incident summaries to access to individual reading
-- CSV export of reading and incident history
-
- ##How it works 
-
- | Reading | Stage | Behaviour|
- |---|---|---|
- |1-10| Normal | Sensors fluctuate around normal values |
- |11-20| Fault | Selected sensors gradually develop abnormal readings|
- |21-30| Recovery| Affected sensors move back towards normal values|
-
- Each run randomly selects the number of affected sensors and which sensors are affected.
-
- ##Incident tracking 
-
- An incident opens when a sensor enter warning or critical state. Each incident receives a unique ID within that run.
-
- An incident closes after **four consecutive normal readings** from its sensor. A warning or critical reading resets the the recovery counter.
- 
- A sensor can therefore show a normal reading while its incident remains open awaiting recovery confirmation. Some incidents may still be open while the simulation ends.
-
- The dashborad shows:
- -**Currently open incidents:** incidents still open at the latest saved reading.
- -**Incident history:** both open and closed incident recorded during the run 
-
- ## Alert thresholds
-
-Critical conditions take priority over warning conditions.
-
-| Sensor | Normal | Warning | Critical |
-|---|---|---|---|
-| Water flow | 90–110 L/min | 70 to below 90, or above 110 L/min | Below 70 L/min |
-| Motor temperature | Below 55°C | 55 to below 70°C | 70°C or above |
-| Water pressure | 3.5–4.5 bar | 3.0 to below 3.5, or above 4.5 to 5.0 bar | Below 3.0 or above 5.0 bar |
-| Vibration | Up to 2.5 mm/s | Above 2.5 to 4.5 mm/s | Above 4.5 mm/s |
-
-These thresholds are demonstration settings, not validated operating limits for real equipment.
-
-## Technology
--**Python:** simulation and incident logic
--**Streamlit:** dashboard
--**Pandas:** data loading and incident summaries
--**Altair:** sensor history charts 
--**CSV:** saved readings and incident records
- 
- ##Run locally
- 
- #### Smart Factory Maintenance
-
-A Python application that simulates cooling-pump operation, detects abnormal sensor readings, and tracks incidents through recovery.
+A Python application that simulates cooling pump operation, detects abnormal sensor readings, and tracks incidents through recovery.
 
 I built this project to practise industrial monitoring, incident tracking, and data visualisation.
 
 ## Overview
 
-The application monitors a simulated cooling pump, **UTL-002**, in a factory’s Utilities department.
+The application monitors a simulated cooling pump (UTL-002) in a factory's Utilities department.
 
 It tracks four measurements:
 
-- Water flow — L/min
-- Motor temperature — °C
-- Water pressure — bar
-- Vibration — mm/s
+- Water flow (L/min)
+- Motor temperature (°C)
+- Water pressure (bar)
+- Vibration (mm/s)
 
-The Streamlit dashboard displays the latest values, sensor-history charts, open incidents, and incident history from the saved simulation.
+The Streamlit dashboard displays the latest sensor readings, history charts, open incidents, and incident history.
 
 ## Features
 
@@ -99,37 +27,37 @@ The Streamlit dashboard displays the latest values, sensor-history charts, open 
 - Threshold-based warning and critical alerts
 - Independent incident tracking for each sensor
 - Incident closure after four consecutive normal readings
-- Charts with labelled thresholds and distinct status colours and shapes
+- Sensor history charts with labelled thresholds
 - Recovery progress for open incidents
-- Incident summaries with access to individual readings
-- CSV export of readings and incident history
+- Incident history and CSV export
 
-## How it works
+## How It Works
 
-Each simulation generates **30 readings**:
+Each simulation generates 30 readings.
 
 | Readings | Stage | Behaviour |
 |---|---|---|
 | 1–10 | Normal | Sensors fluctuate around normal values |
 | 11–20 | Fault | Selected sensors gradually develop abnormal readings |
-| 21–30 | Recovery | Affected sensors move back toward normal values |
+| 21–30 | Recovery | Affected sensors move back towards normal values |
 
-Each run randomly selects both the number of affected sensors and which sensors are affected.
+Each run randomly selects the number of affected sensors and which sensors are affected.
 
-### Incident tracking
+### Incident Tracking
 
-An incident opens when a sensor enters a warning or critical state. Each incident receives a unique ID within that run.
+An incident opens when a sensor enters a warning or critical state.
 
-An incident closes after **four consecutive normal readings** from its sensor. A warning or critical reading resets the recovery counter.
+Each incident receives a unique ID within that simulation run.
 
-A sensor can therefore show a normal value while its incident remains open, awaiting recovery confirmation. Some incidents may still be open when the simulation ends.
+An incident closes after four consecutive normal readings from the affected sensor.
 
-The dashboard shows:
+If another warning or critical reading occurs, the recovery counter resets.
 
-- **Currently open incidents:** incidents still open at the latest saved reading.
-- **Incident history:** both open and closed incidents recorded during the run.
+A sensor can therefore show a normal reading while its incident remains open, waiting for recovery confirmation.
 
-## Alert thresholds
+Some incidents may still be open when the simulation ends.
+
+## Alert Thresholds
 
 Critical conditions take priority over warning conditions.
 
@@ -140,17 +68,17 @@ Critical conditions take priority over warning conditions.
 | Water pressure | 3.5–4.5 bar | 3.0 to below 3.5, or above 4.5 to 5.0 bar | Below 3.0 or above 5.0 bar |
 | Vibration | Up to 2.5 mm/s | Above 2.5 to 4.5 mm/s | Above 4.5 mm/s |
 
-These thresholds are demonstration settings, not validated operating limits for real equipment.
+These thresholds are demonstration settings and are not validated operating limits for real equipment.
 
-## Technology
+## Technologies Used
 
-- **Python:** simulation and incident logic
-- **Streamlit:** dashboard
-- **pandas:** data loading and incident summaries
-- **Altair:** sensor-history charts
-- **CSV:** saved readings and incident records
+- **Python:** Sensor simulation and incident tracking
+- **Streamlit:** Dashboard interface
+- **Pandas:** Data loading and incident summaries
+- **Altair:** Sensor history charts
+- **CSV:** Storage of simulated readings and incident records
 
-## Run locally
+## Run Locally
 
 ### 1. Clone the repository
 
@@ -165,7 +93,7 @@ cd smart-factory-maintenance
 python -m venv .venv
 ```
 
-Activate it in Windows PowerShell:
+Activate it on Windows PowerShell:
 
 ```powershell
 .\.venv\Scripts\Activate.ps1
@@ -189,11 +117,11 @@ python -m pip install -r requirements.txt
 python -m streamlit run dashboard.py
 ```
 
-Open the local URL shown in the terminal.
+Open the local URL shown in your terminal.
 
-Sample CSV files are included, so the dashboard can display a saved simulation immediately.
+Sample CSV files are included, so the dashboard can display saved simulation results immediately.
 
-## Generate a new simulation
+## Generate a New Simulation
 
 Run:
 
@@ -208,41 +136,41 @@ Each run replaces:
 - `pump_readings.csv`
 - `incident_history.csv`
 
-Previous runs are not retained. Incident numbering restarts with each run.
+Previous runs are not retained, and incident numbering restarts with each run.
 
-## Project files
+## Project Structure
 
 | File | Purpose |
 |---|---|
 | `cooling_pump.py` | Generates readings, classifies conditions, and tracks incidents |
-| `dashboard.py` | Displays sensor values, charts,
-recovery progress, and history |
-| `pump_readings.csv` | Sensor readings and incident states from the saved run |
-| `incident_history.csv` | Readings recorded during incidents |
+| `dashboard.py` | Displays sensor values, charts, recovery progress, and incident history |
+| `pump_readings.csv` | Stores sensor readings and incident states |
+| `incident_history.csv` | Stores readings recorded during incidents |
 | `.streamlit/config.toml` | Dashboard theme settings |
 | `requirements.txt` | Python dependencies |
 
-## Scope and limitations
+## Scope and Limitations
 
--The data is limited no physical equipment is connected
--Fault patterns demonstrate abnormal behaviour rather than model pump physics
--Alerts use predefined rules, not machine learning.
--The dashboard displays saved results rather than a live sensor stream
--The application currently supports one cooling pump.
--Results have not been validated for operational maintenance desicions.
+- The data is simulated; no physical equipment is connected.
+- Fault patterns demonstrate abnormal behaviour rather than modelling actual pump physics.
+- Alerts use predefined rules, not machine learning.
+- The dashboard displays saved results rather than a live sensor stream.
+- The application currently supports one cooling pump.
+- Results have not been validated for operational maintenance decisions.
 
-##Future improvements
+## Future Improvements
 
--Automated test for threshold boundaries and recovery logic 
--Database storage for multiple simulation runs 
--support for additional machines
--Simulation controls within the dashboard
+- Automated tests for threshold boundaries and recovery logic
+- Database storage for multiple simulation runs
+- Support for additional machines
+- Simulation controls within the dashboard
 
+## Author
 
-##**Author**
+**Deborah Maha**
 
- **Maha Deborah**
- 
- Control in Technical Systems Student at LETI, interested in industrial software, machine learning and computer vision.
- [GitHub profile](https://github.com/MahaDeborah)
+Control in Technical Systems student at LETI University.
 
+Interested in software development, automation, machine learning, and computer vision.
+
+[GitHub Profile](https://github.com/MahaDeborah)
