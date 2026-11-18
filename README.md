@@ -15,7 +15,7 @@ I built this project to practise industrial monitoring, incident tracking, and d
 
 ### Incident History
 
-![Incident History](incident_history.png)
+![Incident History](https://github.com/MahaDeborah/smart-factory-maintenance/blob/main/Incident%20history.png?raw=true)
 
 ## Overview
 
