@@ -228,13 +228,16 @@ recovery progress, and history |
 -Results have not been validated for operational maintenance desicions.
 
 ##Future improvements
+
 -Automated test for threshold boundaries and recovery logic 
 -Database storage for multiple simulation runs 
 -support for additional machines
 -Simulation controls within the dashboard
-A hosted demonstration
+-A hosted demonstration
 
-##Author
+##**Author**
+
  **Maha Deborah**
+ 
  Control in Technical Systems Student at LETI, interested in industrial software, machine learning and computer vision.
  [GitHub profile](https://github.com/MahaDeborah)
