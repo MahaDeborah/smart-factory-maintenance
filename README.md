@@ -1,4 +1,8 @@
 # Smart Factory Maintenance 
+
+ [View live demo](https://deborah-smart-factory.streamlit.app/)
+
+The demo displays saved simulated sensor readings.
 A python operator that simulates cooling pump operation, detects abnormal sensor readings, and tract incidents through recovery.
 
 I built this project to practise industrial monitoring, incident tracking and data visualisation.
@@ -233,7 +237,7 @@ recovery progress, and history |
 -Database storage for multiple simulation runs 
 -support for additional machines
 -Simulation controls within the dashboard
--A hosted demonstration
+
 
 ##**Author**
 
@@ -242,6 +246,3 @@ recovery progress, and history |
  Control in Technical Systems Student at LETI, interested in industrial software, machine learning and computer vision.
  [GitHub profile](https://github.com/MahaDeborah)
 
- [View live demo](https://deborah-smart-factory.streamlit.app/)
-
-The demo displays saved simulated sensor readings.
