@@ -15,7 +15,7 @@ I built this project to practise industrial monitoring, incident tracking, and d
 
 ### Incident History
 
-![Incident history](Incident history.png)
+![Incident History](incident_history.png)
 
 ## Overview
 
