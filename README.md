@@ -7,6 +7,16 @@ A Python application that simulates cooling pump operation, detects abnormal sen
 
 I built this project to practise industrial monitoring, incident tracking, and data visualisation.
 
+## Dashboard Preview
+
+### Equipment Monitoring
+
+![Smart Factory Dashboard](dashboard.png)
+
+### Incident History
+
+![Incident History](incident_history.png)
+
 ## Overview
 
 The application monitors a simulated cooling pump (UTL-002) in a factory's Utilities department.
